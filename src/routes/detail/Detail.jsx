@@ -5,14 +5,10 @@ import { types } from '../../components/utils/Reducer';
 import axios from 'axios';
 import './detail.css';
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const baseURL = "https://jsonplaceholder.typicode.com/";
 
 const Detail = () => {
-
-  
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
 
   const params = useParams();
 
@@ -57,9 +53,6 @@ const Detail = () => {
           </tr>
 
         </table>
-
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
 
     </div>
   )

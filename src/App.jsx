@@ -3,8 +3,6 @@ import { Main } from "./components/main/Main";
 import Navbar from "./components/navbar/Navbar";
 import Footer from './components/footer/Footer';
 
-// const baseURL = "https://jsonplaceholder.typicode.com/";
-
 function App() {
 
   return (
