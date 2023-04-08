@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import Footer from "./components/Footer";
-import { Main } from "./components/Main";
-import Navbar from "./components/Navbar";
+import { React } from "react";
+import { Main } from "./components/main/Main";
+import Navbar from "./components/navbar/Navbar";
+import Footer from './components/footer/Footer';
 
 // const baseURL = "https://jsonplaceholder.typicode.com/";
 

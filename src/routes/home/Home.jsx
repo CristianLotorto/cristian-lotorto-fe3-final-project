@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-import Card from '../components/Card';
-import { ContextGlobal } from './../components/utils/Provider';
+import Card from '../../components/card/Card';
+import { ContextGlobal } from '../../components/utils/Provider';
 import axios from 'axios';
-import { types } from '../components/utils/Reducer';
+import { types } from '../../components/utils/Reducer';
+import './home.css';
 
 
 const baseURL = "https://jsonplaceholder.typicode.com/";
@@ -11,8 +12,6 @@ const baseURL = "https://jsonplaceholder.typicode.com/";
 const Home = () => {
 
   const {state, dispatch} = useContext(ContextGlobal);
-
-  console.log(state.data)
 
   const getData = async () => {
       

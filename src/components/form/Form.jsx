@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './form.css';
 
 const Form = () => {
   
@@ -6,6 +7,7 @@ const Form = () => {
   const [userEmail, setUserEmail] = useState("");
   const [errorMsj, setErrorMsj] = useState("");
   const [successMsj, setSuccessMsj] = useState("");
+  const [styleMsj, setStyleMsj] = useState("");
 
   const onChangeUserName = (e) => setUserName(e.target.value);
   const onChangeUserEmail = (e) => setUserEmail(e.target.value);
@@ -35,7 +37,6 @@ const Form = () => {
   };
 
 
-  
   const onSubmitForm = (e) => {
     e.preventDefault();
     
@@ -43,10 +44,12 @@ const Form = () => {
     const userEmailValid = validateUserEmail(userEmail);
 
     if (!userNameValid || !userEmailValid) {
+      setStyleMsj('error');
       setErrorMsj("Por favor chequea que la información sea correcta");
     }else {
       
       setErrorMsj("");
+      setStyleMsj('success');
       setSuccessMsj(`Gracias ${userName}, te contactaremos cuando antes vía Email!`);
     }
 
@@ -55,7 +58,7 @@ const Form = () => {
   
 
   return (
-    <div>
+    <div className="form-container">
       <form onSubmit={onSubmitForm}>
 
         <input 
@@ -77,7 +80,7 @@ const Form = () => {
 
       </form>
 
-    <p className="error">
+    <p className={styleMsj}>
       {errorMsj}
       {successMsj}
     </p>

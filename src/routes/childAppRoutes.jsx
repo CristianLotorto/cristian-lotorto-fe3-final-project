@@ -1,8 +1,8 @@
 import React from 'react'
-import Favs from './Favs'
-import Contact from './Contact'
-import Home from './Home'
-import Detail from './Detail'
+import Favs from './favs/Favs'
+import Contact from './contact/Contact'
+import Home from './home/Home'
+import Detail from './detail/Detail'
 import { Navigate } from 'react-router-dom'
 
 export const childAppRoutes = [
@@ -27,7 +27,7 @@ export const childAppRoutes = [
         element: <Favs /> 
     },
     {
-        path: 'detail/:id',
+        path: 'home/detail/:id',
         element: <Detail /> 
     }
 ]

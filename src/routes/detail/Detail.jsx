@@ -1,8 +1,9 @@
-import React, { useContext, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { ContextGlobal } from '../components/utils/Provider';
-import { types } from '../components/utils/Reducer';
+import React, { useContext, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { ContextGlobal } from '../../components/utils/Provider';
+import { types } from '../../components/utils/Reducer';
 import axios from 'axios';
+import './detail.css';
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
@@ -17,6 +18,7 @@ const Detail = () => {
 
   const {state, dispatch} = useContext(ContextGlobal);  
   const dentistData = state.dataById;
+
   const getData = async (id) => {
       
       const response = await axios.get(`${baseURL}users/${id}`)
@@ -28,7 +30,7 @@ const Detail = () => {
   useEffect(() => {
 
     getData(params.id);
-    console.log(state.dataById)
+
   }, []);
 
   return (
@@ -51,7 +53,7 @@ const Detail = () => {
 
             <td>{dentistData.phone}</td>
           
-            <a href={dentistData.website}>{dentistData.website}</a>
+            <td><a href={dentistData.website}>{dentistData.website}</a></td>
           </tr>
 
         </table>
