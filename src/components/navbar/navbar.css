@@ -16,6 +16,7 @@ button {
     height: 100%;
     border-radius: 15px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .nav-container {
